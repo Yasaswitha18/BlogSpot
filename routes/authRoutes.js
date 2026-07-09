@@ -39,6 +39,7 @@ router.post("/", async (req, res) => {
         const result = await auth.createNewUser(name, email, password);
         res.json(result);
     } catch(err) {
+        console.log(err);
         res.json({ 
             err:"An unexpected error occured, please try again later", 
             info: "error", 

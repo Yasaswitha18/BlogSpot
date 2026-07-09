@@ -7,7 +7,7 @@ const db = require("./db/postgresql.js");
 const app = express();
 
 const startApp = async () => {
-    app.listen(3000);
+    app.listen(process.env.PORT || 3000);
     db.connect();
 }
 

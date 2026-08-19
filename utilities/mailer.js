@@ -10,8 +10,10 @@ require('dotenv').config({ path: path.join(__dirname, "..", ".env") });
 //         pass: process.env.MAIL_PASSWORD
 //     }
 // });
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
+const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.MAIL_ID,
         pass: process.env.MAIL_PASSWORD
